@@ -1,0 +1,21 @@
+name: dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: laughedelic/coursier-setup@v1
+        with:
+          jvm: "17.0-custom=tgz+https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz"
+          apps: sbt sbtn
+      - uses: coursier/cache-action@v5
+
+      - name: Tests
+        run: sbt test
