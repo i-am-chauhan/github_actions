@@ -3,7 +3,7 @@ name: dev
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   unit-tests:
