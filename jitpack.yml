@@ -4,5 +4,5 @@ before_install:
   - sdk install java 17-tem
   - sdk use java 17-tem
 install:
-  java -Xms2048m -Xmx2048m -XX:ReservedCodeCacheSize=512m -jar sbt-launch-1.6.1.jar -Dsbt.log.noformat=true clean publishM2
+  java -Xms2048m -Xmx2048m -XX:ReservedCodeCacheSize=512m -jar sbt-launch-1.6.2.jar -Dsbt.log.noformat=true clean publishM2
 
